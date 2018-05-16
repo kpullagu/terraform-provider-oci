@@ -23,7 +23,7 @@ MY_OCID=`curl -s http://169.254.169.254/opc/v1/instance/id`
 ### DO NOT CHANGE THIS SHAPE!!! ###
 SHAPE="BM.Standard1.36"
 
-yum -y -q update
+##yum -y -q update
 yum -y -q install sharutils httpd rsync lzma gcc libffi-devel python-devel openssl-devel unzip gcc rsyslog jq python-firewall
 
 sed -i.bak 's/<\/zone>/  <service name=\"http\"\/>/' /etc/firewalld/zones/public.xml
@@ -43,8 +43,8 @@ chmod 755 /home/opc/.oci
 chmod 777 /var/www/isos
 
 easy_install pip
-pip install pip --upgrade
-pip install oci-cli
+##pip install pip --upgrade
+pip install --user oci-cli
 
 sed '/imtcp/s/#//g' -i.bak /etc/rsyslog.conf
 sed '/InputTCPServerRun/s/#//g' -i.bak /etc/rsyslog.conf
