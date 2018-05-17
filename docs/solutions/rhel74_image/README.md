@@ -21,6 +21,8 @@ There are several prerequisites for using this process:
 6. The subnet to be used must have the following configuration:
 	- Port 80 TCP must be allowed on the subnet
 	- All ICMP traffic must be allowed on the subnet (ICMP All)
+7. Make sure Sharutils package is installed on the Linux machine where you are running this terraform script from. 
+	yum install sharutils
 
 NOTE: A template env-vars file is provided as part of this example.  Simply complete the items inside the template and source the result into your shell by using:
 
@@ -31,7 +33,7 @@ Using this template is simple:
 1. Set your environment variables
 2. Open the configuration.tf file and substitute the values in each of the sections appropriate to your environment
 	NOTE: The AD is specified as either 'AD-x' or 'ad-x' where x is the AD number you wish to use for the process.
-3. Execute 'terraform plan; terraform apply'
+3. Execute 'terraform init; terraform plan; terraform apply'
 4. Get coffee or favorite beverage...
 5. After your image is created, execute 'terraform destroy -force' (there will not be a resource to actually kill,
    so force is required).
