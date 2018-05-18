@@ -44,7 +44,7 @@ chmod 777 /var/www/isos
 
 easy_install pip
 ##pip install pip --upgrade
-pip install --user oci-cli
+sudo -u opc pip install --user oci-cli
 
 sed '/imtcp/s/#//g' -i.bak /etc/rsyslog.conf
 sed '/InputTCPServerRun/s/#//g' -i.bak /etc/rsyslog.conf
